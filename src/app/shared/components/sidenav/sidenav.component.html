@@ -1,0 +1,43 @@
+<div class="sidenav" [ngClass]="menuaberto ? 'sidenav-aberto': '' ">
+    <div class="sidenav-container">
+  
+      <button class="btn btn-link" (click)="alterarEstadoMenu()" [ngClass]="menuaberto ? 'sidenav-aberto-button': '' ">
+        <img class="img-toggler" src="../../../../assets/sidenav/menu.svg" alt="Icono del menú Abrir y cerrar"
+          style="height: 30px;">
+      </button>
+  
+      <ul class="sidenav-links" *ngIf="menuaberto === true">
+  
+        <li class="sidenav-links-item">
+          <a class="sidenav-nav-link"
+          routerLink="/home">
+            <img src="../../../../assets/sidenav/home.svg" alt="Icono home">
+            Home
+          </a>
+        </li>
+  
+        <li class="sidenav-links-item">
+          <a class="sidenav-nav-link"  
+          routerLink="/registrar-tarjeta">
+            <img src="../../../../assets/sidenav/credit-card.svg" alt="Icono tarjeta">
+            Tarjetas
+          </a>
+        </li>
+  
+        <li class="sidenav-links-item">
+          <a class="sidenav-nav-link"
+          routerLink="/registrar-transacion">
+            <img src="../../../../assets/sidenav/pencil-square.svg" alt="Icono transacciones">
+            Transacciones
+          </a>
+        </li>
+      </ul>
+  
+      <!-- Botão logout -->
+      <button *ngIf="menuaberto === true" 
+      type="button" class="btn btn-outline-light" id="btn-sair" (click)="logout()">
+        <i class="bi bi-arrow-left-circle-fill"></i>Salir
+      </button>
+  
+    </div>
+  </div>
